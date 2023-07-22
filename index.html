@@ -1,84 +1,187 @@
 <!DOCTYPE html>
 <html lang="en">
+	<head>
+		<meta charset="utf-8">
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <link rel="stylesheet" href="style.css">
-    <script src="script.js"></script>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta property="og:site_name" content="View Vinayak Patil's Portfolio Website">
-    <meta property="og:title" content="Developer | Tech Enthusiast" />
-    <meta property="og:description"
-        content="Hello there 👋🏻,My name is Vinayak Ramchandra Patil.I am a Computer Engineering student at Ch. Shivaji University 👨🏻‍💻📚I am eager to hear about potential career opportunities, so I would be pleased to chat about job openings in the engineering sphere.Send 'help' to know more about me." />
-    <meta property="og:image" itemprop="image" content="https://vinayak-portfolio-09.herokuapp.com/images/dp.jpg">
-    <meta property="og:type" content="website" />
+    <!-- 
+      TODO
 
-    <link itemprop="thumbnailUrl" href="https://vinayak-portfolio-09.herokuapp.com/images/dp.jpg">
-    <!-- No need to change anything here -->
-    <meta property="og:type" content="website" />
-    <meta property="og:image:type" content="image/jpeg">
+      Upload your Unemployable (or whatever photo you like) to the assets/images folder
+      and change the name of the image below to match the uploaded one
 
-    <!-- Size of image. Any size up to 300. Anything above 300px will not work in WhatsApp -->
-    <meta property="og:image:width" content="300">
-    <meta property="og:image:height" content="300">
-    <meta property="og:updated_time" content="1440432930" />
+      Change the title in the <title> tag to whatever you would like the title of your portfolio to be
 
-    <title>Developer | Tech Enthusiast | </title>
-</head>
+      This should be the same across all pages.
+     -->
+    <link rel="icon" href="./assets/images/1311.png" />
+		<title>Amit_Prajapati</title>
+    <meta name="description" content="A portfolio template for the Unemployables community.">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-<body onload="startFunction()">
+		<link rel="stylesheet" href="./css/layout.css">
+    <link rel="stylesheet" href="./css/typography.css">
+    <link rel="stylesheet" href="./css/utilities.css">
 
-    <link itemprop="thumbnailUrl" href="https://vinayak-portfolio-09.herokuapp.com/images/dp.jpg">
-    <span itemprop="thumbnail" itemscope itemtype="http://schema.org/ImageObject">
-        <link itemprop="url" href="https://vinayak-portfolio-09.herokuapp.com/images/dp.jpg">
-    </span>
-
-    <nav>
-
-        <div class="navbar">
-            <img class="dpimg" onclick="openFullScreenDP()" src="images/squareDp.jpg" alt="">
-            <div class="personalInfo">
-                <label id="name">Vinayak Patil</label>
-                <label id="lastseen">last seen today at 3:24 pms</label>
-            </div>
-        </div>
-
-    </nav>
-
-
-    <div class="scrollable" id="myScrollable">
-
-        <div class="fullScreenDP" id="fullScreenDP">
-            <div class="insideDP">
-                <img class="dp" src="images/squareDp.jpg" alt="">
-                <svg class="closeBTN" onclick="closeFullDP()" xmlns="http://www.w3.org/2000/svg" width="64px"
-                    viewBox="0 0 512 512" height="64px">
-                    <path class="btnColor" fill="#E04F5F"
-                        d="M504.1,256C504.1,119,393,7.9,256,7.9C119,7.9,7.9,119,7.9,256C7.9,393,119,504.1,256,504.1C393,504.1,504.1,393,504.1,256z" />
-                    <path fill="#FFF"
-                        d="M285,256l72.5-84.2c7.9-9.2,6.9-23-2.3-31c-9.2-7.9-23-6.9-30.9,2.3L256,222.4l-68.2-79.2c-7.9-9.2-21.8-10.2-31-2.3c-9.2,7.9-10.2,21.8-2.3,31L227,256l-72.5,84.2c-7.9,9.2-6.9,23,2.3,31c4.1,3.6,9.2,5.3,14.3,5.3c6.2,0,12.3-2.6,16.6-7.6l68.2-79.2l68.2,79.2c4.3,5,10.5,7.6,16.6,7.6c5.1,0,10.2-1.7,14.3-5.3c9.2-7.9,10.2-21.8,2.3-31L285,256z" />
-                </svg>
-            </div>
-        </div>
-
-        <div id="chatting" class="chatting">
-            <ul id="listUL">
-            </ul>
-        </div>
+		<script defer src="./js/script.js"></script>
+	</head>
+	<body>
+    <!-- NAVBAR -->
+    <div class="navbar">
+      <a class="nav-title-link" href="./index.html">
+        <!-- TODO - Change the "Portfolio Title" to whatever you want displayed in the top left -->
+        <span class="nav-title">Portfolio Title</span>
+         <!-- TODO - Change the email after 'mailto:' to your email address for contact -->
+        <a class="button" href="mailto:whitevans.eth@gmail.com">
+          <span class="button-text">Contact Me</span>
+        </a>
+      </a>
     </div>
 
+    <!-- MAIN PAGE CONTENT -->
+    <div id="main-content">
 
-    <footer>
-        <div class="sendBar">
-            <input id="inputMSG" onkeypress="isEnter(event)" type="text" placeholder="Type a message" autofocus>
-            <svg onclick="sendMsg()" viewBox="0 0 24 24" width="24" height="24" class="">
-                <path fill="currentColor"
-                    d="M1.101 21.757 23.8 12.028 1.101 2.3l.011 7.912 13.623 1.816-13.623 1.817-.011 7.912z"></path>
-            </svg>
+      <!-- PORTFOLIO HEADER -->
+      <div id="portfolio-header">
+        <div id="portfolio-header-image-container">
+          <!-- 
+            TODO
+
+            - Change the img "src" attribute to point to the Unemployable image you uploaded (or whatever image).
+            - Change the number to point to your Unemployable & replace the OpenSea link with your own
+            - If you aren't using an Unemployable as your image, remove the entire "a" element
+          -->
+          <img src="./assets/images/1311.png" class="portfolio-header-image">
+          <a class="no-underline" target="_blank" href="https://opensea.io/assets/0xe0be388ab81c47b0f098d2030a1c9ef190691a8a/1311">
+            <span class="image-caption">Unemployables #1311</span>
+          </a>
         </div>
-    </footer>
 
-</body>
+          <!-- 
+            TODO
 
+            - Change the main-title to whatver you want
+            - Change the body-text after that to a quick introduction to what you do
+            - Edit the button text if you feel like it. It will link to the projects section below.
+          -->
+        <div id="portfolio-header-text-container">
+            <div class="header-text">
+              <span class="main-title">Hey, I'm Amit.</span>
+              <div class="body-text">I'm a data science student with a passion for exploring the vast world of data and applying advanced analytics to solve real-world challenges.</div>
+            </div>
+            <a class="button" id="my-work-link">
+              <span class="button-text">Check out my projects</span> 
+              <image src="./assets/icons/arrow-right.svg" class="right-arrow-icon"/>
+            </a>
+        </div>
+      </div>
+
+      <!-- ABOUT SECTION -->
+      <!-- 
+        TODO
+
+        - Change the subheader-text to whatever header you want
+        - Add paragraphs using the <div class="body-text"></div> elements in the "about-section-content"
+      -->
+      <div id="about-section">
+        <span class="subheader-text">My Background / About Me</span>
+        <div class="about-section-content">
+          <div class="body-text">Hello, I'm Amit Prajapati, a dedicated and passionate individual with a strong foundation in Data Science and a keen interest in exploring the exciting world of Computer Vision and Deep Learning. As a recent graduate in Data Science from NMIMS University, I have acquired valuable skills in analytical thinking and problem-solving. Currently pursuing my Master's in Data Science at Worcester Polytechnic Institute (WPI), I am on a mission to delve deeper into the fascinating fields of Computer Vision and Deep Learning. My academic journey has involved rigorous studies in image recognition, object detection, and neural networks, igniting a deep curiosity for developing cutting-edge applications with AI and Machine Learning. I believe that the synergy between Data Science and Computer Vision holds enormous potential to create innovative and user-centric solutions that can truly impact industries and people's lives positively. Let's embark on an exciting journey of exploring the limitless possibilities of this captivating domain together!</div>
+          <!-- <div class="body-text">Vitae justo eget magna fermentum. Imperdiet nulla malesuada pellentesque elit eget gravida. Aliquet nec ullamcorper sit amet. Aliquet sagittis id consectetur purus. Ac tortor dignissim convallis aenean. Enim neque volutpat ac tincidunt vitae. Lobortis feugiat vivamus at augue. Platea dictumst vestibulum rhoncus est pellentesque elit ullamcorper. Viverra orci sagittis eu volutpat. Massa tincidunt nunc pulvinar sapien et ligula. Donec enim diam vulputate ut.</div> -->
+        </div>
+      </div>
+
+      <!-- PROJECTS / MY WORK SECTION -->
+      <div id="my-work-section">
+        <!-- TODO - Change the subheader-text to whatever you want the Projects section header to say -->
+        <span class="subheader-text">My Work / My Projects</span>
+
+        <div class="projects-container">
+          <!-- 
+            TODO
+
+            This is where the project cards live. Here's a base level project card for you to copy:
+            <div class="project-card">
+              <img src="./assets/images/IMAGE_NAME" class="project-image">
+              <div class="project-card-text-container">
+                <div class="subheader-text project-title">PROJECT_NAME</div>
+                <div class="body-text project-card-text">SMALL_PROJECT_DESCRIPTION</div>
+              </div>
+              <a class="button" href="./project-pages/PROJECT_PAGE_NAME.html">
+                <span class="button-text">Read More</span>
+                <image src="./assets/icons/arrow-right.svg" class="right-arrow-icon"/>
+              </a>
+            </div>
+
+            - To add a project to the this area, copy the above, paste it below this comment, and change the following:
+                - IMAGE_NAME: the name of the image file in assets/images
+                - PROJECT_NAME: the name of the project (keep it short, it only shows 1 line)
+                - SMALL_PROJECT_DESCRIPTION: a quick project description (max 4 lines)
+                - PROJECT_PAGE_NAME.html: the html filename for the project (must be in project-pages folder)
+          -->
+          <div class="project-card">
+            <img src="./assets/images/desktop.jpeg" class="project-image">
+            <div class="project-card-text-container">
+              <div class="subheader-text project-title">Project Name</div>
+              <div class="body-text project-card-text">Elit pellentesque habitant morbi tristique senectus et netus et. Elementum tempus egestas sed sed risus pretium quam. Nibh ipsum consequat nisl vel pretium</div>
+            </div>
+            <a class="button" href="./project-pages/project-template.html">
+              <span class="button-text">Read More</span>
+              <image src="./assets/icons/arrow-right.svg" class="right-arrow-icon"/>
+            </a>
+          </div>
+          <div class="project-card">
+            <img src="./assets/images/code.jpeg" class="project-image">
+            <div class="project-card-text-container">
+              <div class="subheader-text project-title">Project Name</div>
+              <div class="body-text project-card-text">Elit pellentesque habitant morbi tristique senectus et netus et. Elementum tempus egestas sed sed risus pretium quam. Nibh ipsum consequat nisl vel pretium</div>
+            </div>
+            <a class="button" href="./project-pages/project-template.html">
+              <span class="button-text">Read More</span>
+              <image src="./assets/icons/arrow-right.svg" class="right-arrow-icon"/>
+            </a>
+          </div>
+          <div class="project-card">
+            <img src="./assets/images/sketchbook.jpeg" class="project-image">
+            <div class="project-card-text-container">
+              <div class="subheader-text project-title">Super Long Project Name That Should be Hidden</div>
+              <div class="body-text project-card-text">Elit pellentesque habitant morbi tristique senectus et netus et. Elementum tempus egestas sed sed risus pretium quam. Nibh ipsum consequat nisl vel pretium</div>
+            </div>
+            <a class="button" href="./project-pages/project-template.html">
+              <span class="button-text">Read More</span>
+              <image src="./assets/icons/arrow-right.svg" class="right-arrow-icon"/>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- FOOTER -->
+    <div id="footer">
+      <!-- 
+        TODO - Change href to your Instagram account (can also delete entire "a" element if no Instagram) 
+
+        This should be the same across all pages.
+      -->
+      <a class="icon-link" target="_blank" href="https://twitter.com/whitevans_eth">
+        <image src="./assets/icons/instagram.svg" class="footer-icon"/>
+      </a>
+      <!-- 
+        TODO - Change href to your Twitter account (can also delete entire "a" element if no Twitter) 
+      
+        This should be the same across all pages.
+      -->
+      <a class="icon-link" target="_blank" href="https://twitter.com/whitevans_eth">
+        <image src="./assets/icons/twitter.svg" class="footer-icon"/>
+      </a>
+      <!-- 
+        TODO - Change the email after "mailto" to your contact email 
+      
+        This should be the same across all pages.
+      -->
+      <a class="icon-link" href="mailto:whitevans.eth@gmail.com">
+        <image src="./assets/icons/mail.svg" class="footer-icon"/>
+      </a>
+    </div>
+
+	</body>
 </html>
