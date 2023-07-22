@@ -98,6 +98,7 @@ body {
       display: flex;
       flex-direction: column;
       gap: 34px;
+      padding: 15px;
     }
 
     .project-card-text-container {
@@ -108,15 +109,20 @@ body {
 
     .project-image {
       width: 100%;
-      height: 200px;
+      height: 175px;
       object-fit: cover;
       object-position: center;
     }
 
 .custom-link {
   text-decoration: none; /* Remove underline */
-  color: #ff6600; /* Set the desired color (here, it's orange) */
+  color: black; /* Set the desired color (here, it's orange) */
 }
+hr {
+    border: 1px solid #000; /* Set the border color to black */
+    height: 2px; /* Set the height of the line to 2 pixels */
+    margin: 0px 0; /* Add some margin above and below the line */
+  }
 
 
 /* Project Pages */
@@ -175,6 +181,27 @@ body {
     }
 
 
+/* Custom style for the ROLE text */
+/* .role-text {
+  margin-top: 10px;
+} */
+
+.role {
+  font-weight: bold;
+}
+
+.job-title {
+  font-style: italic;
+}
+
+
+/* FOTTER CSS */
+.footer-icon {
+  transform: scale(1.5); /* Adjust the scale factor as per your preference */
+  margin-right: 20px; /* Adjust the space between each icon as per your preference */
+
+}
+  
 /* Extra Extra large devices (large laptops and desktops, 1200px and below) */
 @media only screen and (max-width: 1600px) {
   #main-content {
