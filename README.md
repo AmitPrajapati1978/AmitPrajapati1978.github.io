@@ -1,12 +1,39 @@
-HTML, CSS, JavaScript and Bootstrap 5 Portfolio Website
-=======
-![Peek 2022-01-24 11-06](https://user-images.githubusercontent.com/11813341/150726892-d47d1860-b157-4453-aab0-860b1328b25c.gif)
+# Attractive Advance Portfolio Website
+## _Chatting Bot Like Design (Whatsapp like interface)_
 
-# Tools used #
-* HTML, CSS and JavaScript
-* [Bootstrap 5](https://getbootstrap.com/docs/5.0/getting-started/introduction/)
-* [Font Awesome 5](https://fontawesome.com/)
-* [google map](https://www.embed-map.com/)
 
-This is the [live demo](https://brad-portfolio.netlify.app/) of the project . 
+- [Running Site](https://vinayak-09.github.io/)
 
+[![N|Solid](images/demo.gif)](https://vinayak-09.github.io/)
+
+## Technologies Used
+
+- HTML
+- Javascript
+- CSS
+
+## Features
+
+- Whatsapp like interface
+- Pleasant sounds
+- Lightweighted
+- Social media links
+- Download resume.
+- Map support for address
+- Random replies for hi, bye, i love you.
+
+<br><br>
+
+## Connect with Me: 
+
+<br>
+
+[![N|Solid](images/telegram.svg)](https://t.me/vinayak_09)
+
+
+[![N|Solid](images/instagram.svg)](https://instagram.com/vinayak_patil_09)
+
+
+<br>
+
+**Free Software, Hell Yeah!**
