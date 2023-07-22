@@ -113,6 +113,42 @@ body {
       object-position: center;
     }
 
+/* Intership Section */
+
+#my-internship-section {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.projects-container {
+  display: flex;
+  gap: 34px 16px;
+  flex-wrap: wrap;
+}
+
+    /* Project Cards */
+
+    .project-card {
+      max-width: calc((100% - 32px) / 3);
+      display: flex;
+      flex-direction: column;
+      gap: 34px;
+    }
+
+    .project-card-text-container {
+      flex-direction: column;
+      display: flex;
+      gap: 16px
+    }
+
+    .project-image {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      object-position: center;
+    }
+
 
 
 
