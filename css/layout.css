@@ -175,3 +175,55 @@
     max-width: 100%;
   }
 }
+
+/* Media Queries (Adjust the values as needed) */
+
+/* Extra Extra large devices (large laptops and desktops, 1600px and below) */
+@media only screen and (max-width: 1600px) {
+  #main-content {
+    margin: 225px 275px;
+  }
+  #my-internship-section {
+    margin-top: 40px; /* Adjust this value to shorten the internship section */
+  }
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and below) */
+@media only screen and (max-width: 1200px) {
+  #main-content {
+    margin: 225px 175px;
+  }
+  #my-internship-section {
+    margin-top: 40px; /* Adjust this value to shorten the internship section */
+  }
+}
+
+/* Large devices (laptops/desktops, 1000px and below) */
+@media only screen and (max-width: 1000px) {
+  #main-content {
+    margin: 225px 75px;
+  }
+  #my-internship-section {
+    margin-top: 40px; /* Adjust this value to shorten the internship section */
+  }
+}
+
+/* Small devices (portrait tablets and large phones, 800px and below) */
+@media only screen and (max-width: 800px) {
+  #main-content {
+    margin: 150px 50px;
+  }
+  #my-internship-section {
+    margin-top: 40px; /* Adjust this value to shorten the internship section */
+  }
+}
+
+/* Small devices (portrait tablets and large phones, 600px and below) */
+@media only screen and (max-width: 600px) {
+  #main-content {
+    margin: 125px 20px;
+  }
+  #my-internship-section {
+    margin-top: 40px; /* Adjust this value to shorten the internship section */
+  }
+}
