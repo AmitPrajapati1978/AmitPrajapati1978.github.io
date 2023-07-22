@@ -78,7 +78,7 @@ body {
 
 
 /* Project Section */
-
+#my-internship-section,
 #my-work-section {
   display: flex;
   flex-direction: column;
