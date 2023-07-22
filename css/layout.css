@@ -113,7 +113,10 @@ body {
       object-position: center;
     }
 
-
+.custom-link {
+  text-decoration: none; /* Remove underline */
+  color: #ff6600; /* Set the desired color (here, it's orange) */
+}
 
 
 /* Project Pages */
