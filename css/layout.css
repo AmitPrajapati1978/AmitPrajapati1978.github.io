@@ -1,6 +1,25 @@
-/* Common styles for both sections */
+* {
+  box-sizing: border-box;
+}
+
+html {
+  text-size-adjust: none;
+  -webkit-text-size-adjust: none;
+  -moz-text-size-adjust: none;
+  -ms-text-size-adjust: none;
+}
+
+body {
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+
+
 
 /* Main Page Layout */
+
 #main-content {
   margin: 225px 425px;
   display: flex;
@@ -8,7 +27,11 @@
   gap: 96px;
 }
 
+
+
+
 /* Portfolio Header */
+
 #portfolio-header {
   display: flex;
   gap: 20px;
@@ -34,16 +57,29 @@
   flex-basis: 50%;
 }
 
+
+
+
 /* About Section */
+
+/* #about-section {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+} */
+
 .about-section-content {
   display: flex;
   flex-direction: column;
   gap: 34px;
 }
 
-/* Project and Internship Sections */
-#my-work-section,
-#my-internship-section {
+
+
+
+/* Project Section */
+
+#my-work-section {
   display: flex;
   flex-direction: column;
   gap: 16px;
@@ -55,27 +91,33 @@
   flex-wrap: wrap;
 }
 
-.project-card {
-  max-width: calc((100% - 32px) / 3);
-  display: flex;
-  flex-direction: column;
-  gap: 34px;
-}
+    /* Project Cards */
 
-.project-card-text-container {
-  flex-direction: column;
-  display: flex;
-  gap: 16px;
-}
+    .project-card {
+      max-width: calc((100% - 32px) / 3);
+      display: flex;
+      flex-direction: column;
+      gap: 34px;
+    }
 
-.project-image {
-  width: 100%;
-  height: 200px;
-  object-fit: cover;
-  object-position: center;
-}
+    .project-card-text-container {
+      flex-direction: column;
+      display: flex;
+      gap: 16px
+    }
+
+    .project-image {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      object-position: center;
+    }
+
+
+
 
 /* Project Pages */
+
 #project-header {
   display: flex;
   flex-direction: column;
@@ -99,37 +141,38 @@
   gap: 34px;
 }
 
-#project-gallery {
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-}
+    /* Project Gallery */
 
-.project-gallery-content {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 34px 16px;
-}
+    #project-gallery {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
 
-.gallery-image-container {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
+    .project-gallery-content {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 34px 16px;
+    }
 
-.gallery-image-container.half-width {
-  width: calc((100% - 16px) / 2);
-}
+    .gallery-image-container {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
 
-.gallery-image {
-  width: 100%;
-  height: auto;
-}
+    .gallery-image-container.half-width {
+      width: calc((100% - 16px) / 2);
+    }
 
-/* Media Queries (Adjust the values as needed) */
+    .gallery-image {
+      width: 100%;
+      height: auto;
+    }
 
-/* Extra Extra large devices (large laptops and desktops, 1600px and below) */
+
+/* Extra Extra large devices (large laptops and desktops, 1200px and below) */
 @media only screen and (max-width: 1600px) {
   #main-content {
     margin: 225px 275px;
@@ -176,54 +219,5 @@
   }
 }
 
-/* Media Queries (Adjust the values as needed) */
 
-/* Extra Extra large devices (large laptops and desktops, 1600px and below) */
-@media only screen and (max-width: 1600px) {
-  #main-content {
-    margin: 225px 275px;
-  }
-  #my-internship-section {
-    margin-top: 40px; /* Adjust this value to shorten the internship section */
-  }
-}
 
-/* Extra large devices (large laptops and desktops, 1200px and below) */
-@media only screen and (max-width: 1200px) {
-  #main-content {
-    margin: 225px 175px;
-  }
-  #my-internship-section {
-    margin-top: 40px; /* Adjust this value to shorten the internship section */
-  }
-}
-
-/* Large devices (laptops/desktops, 1000px and below) */
-@media only screen and (max-width: 1000px) {
-  #main-content {
-    margin: 225px 75px;
-  }
-  #my-internship-section {
-    margin-top: 40px; /* Adjust this value to shorten the internship section */
-  }
-}
-
-/* Small devices (portrait tablets and large phones, 800px and below) */
-@media only screen and (max-width: 800px) {
-  #main-content {
-    margin: 150px 50px;
-  }
-  #my-internship-section {
-    margin-top: 40px; /* Adjust this value to shorten the internship section */
-  }
-}
-
-/* Small devices (portrait tablets and large phones, 600px and below) */
-@media only screen and (max-width: 600px) {
-  #main-content {
-    margin: 125px 20px;
-  }
-  #my-internship-section {
-    margin-top: 40px; /* Adjust this value to shorten the internship section */
-  }
-}
