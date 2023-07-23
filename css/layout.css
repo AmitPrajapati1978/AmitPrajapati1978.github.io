@@ -189,7 +189,6 @@ hr {
 .role {
   font-weight: bold;
 }
-
 .job-title {
   font-style: italic;
 }
@@ -200,6 +199,23 @@ hr {
   transform: scale(1.5); /* Adjust the scale factor as per your preference */
   margin-right: 20px; /* Adjust the space between each icon as per your preference */
 
+}
+/* Footer Section */
+#footer {
+  background-color: #333;
+  color: #fff; /* Set the text color to white */
+  text-align: center;
+  padding: 1rem;
+  margin-top: 20px;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+#footer p {
+  margin: 0;
+  font-size: 0.9rem;
+  opacity: 0.8;
+  /* color: #ccc; */ /* Remove this line as it sets the text color to gray */
 }
   
 /* Extra Extra large devices (large laptops and desktops, 1200px and below) */
