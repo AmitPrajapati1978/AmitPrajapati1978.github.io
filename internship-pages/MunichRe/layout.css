@@ -1,7 +1,23 @@
 /* layout.css */
+* {
+  box-sizing: border-box;
+}
+
+html {
+  text-size-adjust: none;
+  -webkit-text-size-adjust: none;
+  -moz-text-size-adjust: none;
+  -ms-text-size-adjust: none;
+}
+
+body {
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
 
 /* Center the body content */
-body {
+/* body {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -11,7 +27,7 @@ body {
   font-family: 'Roboto', sans-serif;;
   font-size: medium;
   background-color: #f2f2f2;
-}
+} */
 
 /* Wrapper to center the project content */
 .project-wrapper {
@@ -52,7 +68,7 @@ li{
   object-position: center;
 }
 
-/* 
+
 @media only screen and (max-width: 600px) {
   #main-content {
     margin: 125px 20px;
@@ -61,4 +77,4 @@ li{
   .intern-card {
     max-width: 100%;
   }
-} */
+}
