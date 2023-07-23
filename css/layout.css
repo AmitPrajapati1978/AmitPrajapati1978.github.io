@@ -196,14 +196,14 @@ hr {
 
 /* FOTTER CSS */
 .footer-icon {
-  transform: scale(2); /* Adjust the scale factor as per your preference */
-  margin-right: 20px; /* Adjust the space between each icon as per your preference */
+  transform: scale(1); /* Adjust the scale factor as per your preference */
+  margin-right: 30px; /* Adjust the space between each icon as per your preference */
 
 }
 /* Footer Section */
 #footer {
   background-color: white;
-  color: #fff; /* Set the text color to white */
+  color: white; /* Set the text color to white */
   text-align: center;
   padding: 1rem;
   margin-top: 20px;
