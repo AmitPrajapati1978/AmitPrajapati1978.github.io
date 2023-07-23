@@ -2,15 +2,13 @@
 /* Icons */
 
 .right-arrow-icon {
+  object-position: center;
   width: 16px;
   height: 16px;
   margin-top: 1px;
 }
 
-.footer-icon {
-  width: 20px;
-  height: 20px;
-}
+
 
 a.icon-link {
   transition: transform 200ms ease-in-out;
@@ -58,6 +56,8 @@ a.icon-link:hover {
 /* Button Styling */
 
 a.button {
+  /* text-align: center; */
+  object-position: center;
   padding: 8px 16px;
   border: 3px solid #141414;
   border-radius: 50px;
@@ -67,7 +67,12 @@ a.button {
   display: flex;
   gap: 5px;
   align-items: center;
+  justify-content: center;
+  margin: 0 auto;
 }
+
+
+
 
 a.button:hover {
   text-decoration: underline;
