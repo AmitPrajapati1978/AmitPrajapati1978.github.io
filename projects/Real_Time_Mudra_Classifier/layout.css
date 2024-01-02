@@ -25,6 +25,9 @@ body {
 li{
   font-size: large;
 }
+.center-container {
+  text-align: center;
+}
 
 .interrnship-container {
   display: flex;
