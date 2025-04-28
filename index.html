@@ -291,7 +291,41 @@
         </p> -->
       </div>
     </section>
-
+    <section id="leetcode" class="section scrollspy">
+      <h3 class="page-title white-text teal">LeetCode Live Stats</h3>
+      <div class="container">
+        <div id="leetcode-stats" class="card-panel">
+          <h5>Loading your LeetCode stats...</h5>
+        </div>
+      </div>
+    </section>
+    
+    <script>
+    async function fetchLeetCodeStats() {
+      const username = "your-leetcode-username"; // <<<--- your LeetCode username
+      const response = await fetch(`https://leetcode-api-faisalshohag.vercel.app/Amit191978`);
+      const data = await response.json();
+      
+      if (data.status === 'success') {
+        const statsHTML = `
+          <h5>${data.username}'s LeetCode Progress</h5>
+          <ul>
+            <li><b>Problems Solved:</b> ${data.totalSolved} / ${data.totalQuestions}</li>
+            <li><b>Easy:</b> ${data.easySolved} / ${data.totalEasy}</li>
+            <li><b>Medium:</b> ${data.mediumSolved} / ${data.totalMedium}</li>
+            <li><b>Hard:</b> ${data.hardSolved} / ${data.totalHard}</li>
+            <li><b>Ranking:</b> ${data.ranking}</li>
+          </ul>
+        `;
+        document.getElementById('leetcode-stats').innerHTML = statsHTML;
+      } else {
+        document.getElementById('leetcode-stats').innerHTML = "<p>Failed to load stats.</p>";
+      }
+    }
+    
+    fetchLeetCodeStats();
+    </script>
+    
 
     <!-- Third Section: Experience -->
     <section id="experience" class="section scrollspy">
