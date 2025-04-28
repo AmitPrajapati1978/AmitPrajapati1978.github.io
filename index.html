@@ -13,6 +13,11 @@
   'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
   })(window,document,'script','dataLayer','GTM-PGZH8HT');</script>
   <!-- End Google Tag Manager -->
+<!-- Cal-Heatmap CSS -->
+
+  <link rel="stylesheet" href="https://unpkg.com/cal-heatmap@4.0.0-beta.7/cal-heatmap.css" />
+  <!-- Cal-Heatmap JS -->
+  <script src="https://unpkg.com/cal-heatmap@4.0.0-beta.7/cal-heatmap.min.js"></script>
 
   <!-- Materialize - Compiled and minified CSS-->
   <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/materialize/0.95.3/css/materialize.min.css" />
@@ -262,77 +267,8 @@
         <p>
           Data Science graduate student at WPI with hands-on experience building scalable ML pipelines, real-time AI systems, and end-to-end data platforms using Python, TensorFlow, AWS, and more. Passionate about creating impactful, data-driven solutions for businesses and communities.
         </p>
-        <!-- <p>
-          <ul>
-            <li><strong>Languages:</strong> Python, Java, JavaScript, C, C++, HTML/CSS, Bash</li>
-            <li><strong>Databases:</strong> MySQL, PostgreSQL, MongoDB</li>
-            <li><strong>Libraries:</strong> NumPy, Pandas, OpenCV</li>
-            <li><strong>Frameworks:</strong> Flask, Django, Node.js, Keras, TensorFlow, PyTorch, Bootstrap, Apache Beam</li>
-            <li><strong>Tools & Technologies:</strong> Git, Docker, AWS, GCP, Heroku, JIRA</li>
-          </ul>
-          
-        </p> -->
-          
-        <!-- <p>
-          
-          Detail-oriented Software Developer with professional experience in Backend Development, Machine Learning, Computer Vision. I am adept in Python, Django, Flask, SQL, Machine Learning, Computer Vision.           
-        </p> -->
 
-        <!-- <p>
-          Another Paragraph
-        </p>  -->
-        <!-- <p>
-        <strong>Current Focus</strong>:&nbsp;<a aria-label="Navigate to the Inclusive Design Patterns homepage"
-          href="https://www.smashingmagazine.com/inclusive-design-patterns/">Accessibility</a>&nbsp;//&nbsp;<a
-          aria-label="Navigate to the Full Stack React homepage"
-          href="https://www.fullstackreact.com/">React</a>&nbsp;//&nbsp;<a
-          aria-label='Navigate to the article "Scalable CSS"'
-          href="https://mrmrs.github.io/writing/2016/03/24/scalable-css/">Design Systems</a>
-        </p> -->
       </div>
-    </section>
-    <section id="leetcode" class="section scrollspy">
-      <h3 class="page-title white-text teal">LeetCode Live Stats</h3>
-      <div class="container">
-        <div id="leetcode-stats" class="card-panel">
-          <h5>Loading your LeetCode stats...</h5>
-        </div>
-      </div>
-    </section>
-    
-    <script>
-      async function fetchLeetCodeStats() {
-        const username = "Amit191978"; // ✅ Correct username
-        try {
-          const response = await fetch(`https://leetcode-api-faisalshohag.vercel.app/${username}`);
-          const data = await response.json();
-      
-          // ✅ No need to check for 'status'. Instead check for actual data fields.
-          if (data.totalSolved !== undefined) {
-            const statsHTML = `
-              <h5>${username}'s LeetCode Progress</h5>
-              <ul>
-                <li><b>Problems Solved:</b> ${data.totalSolved} / 3534</li>
-                <li><b>Easy:</b> ${data.easySolved} / 873</li>
-                <li><b>Medium:</b> ${data.mediumSolved} / 1834</li>
-                <li><b>Hard:</b> ${data.hardSolved} / 827</li>
-                <li><b>Ranking:</b> ${data.ranking}</li>
-                <li><b>Contribution Points:</b> ${data.contributionPoint}</li>
-              </ul>
-            `;
-            document.getElementById('leetcode-stats').innerHTML = statsHTML;
-          } else {
-            document.getElementById('leetcode-stats').innerHTML = "<p>Failed to load stats.</p>";
-          }
-        } catch (error) {
-          console.error(error);
-          document.getElementById('leetcode-stats').innerHTML = "<p>Error loading stats.</p>";
-        }
-      }
-      
-      fetchLeetCodeStats();
-      </script>
-      
       
 
     
@@ -547,6 +483,107 @@
         </div>
       </section>
 
+      <!-- LeetCode Section: Live Stats -->
+      <section id="leetcode" class="section scrollspy">
+        <h3 class="page-title white-text teal">LeetCode Live Stats</h3>
+        <div class="container">
+          <div id="leetcode-stats" class="card-panel">
+            <h5>Loading your LeetCode stats...</h5>
+          </div>
+        </div>
+      </section>
+
+      <!-- LeetCode Section: Submission Heatmap -->
+      <section id="leetcode-heatmap" class="section scrollspy">
+        <h3 class="page-title white-text teal">LeetCode Submission Heatmap</h3>
+        <div class="container">
+          <div id="heatmap" class="card-panel" style="padding: 20px;">
+            <h5>Loading your submission activity...</h5>
+          </div>
+        </div>
+      </section>
+
+      <!-- Scripts -->
+      <!-- 📌 Add these in <head> if you haven't already -->
+      <!-- <link rel="stylesheet" href="https://unpkg.com/cal-heatmap@4.0.0-beta.7/cal-heatmap.css" />
+      <script src="https://unpkg.com/cal-heatmap@4.0.0-beta.7/cal-heatmap.min.js"></script> -->
+
+      <script>
+      // Fetch LeetCode Stats
+      async function fetchLeetCodeStats() {
+        const username = "Amit191978"; // Your correct username
+        try {
+          const response = await fetch(`https://leetcode-api-faisalshohag.vercel.app/${username}`);
+          const data = await response.json();
+
+          if (data.totalSolved !== undefined) {
+            const statsHTML = `
+              <h5>${username}'s LeetCode Progress</h5>
+              <ul>
+                <li><b>Problems Solved:</b> ${data.totalSolved} / 3534</li>
+                <li><b>Easy:</b> ${data.easySolved} / 873</li>
+                <li><b>Medium:</b> ${data.mediumSolved} / 1834</li>
+                <li><b>Hard:</b> ${data.hardSolved} / 827</li>
+                <li><b>Ranking:</b> ${data.ranking}</li>
+                <li><b>Contribution Points:</b> ${data.contributionPoint}</li>
+              </ul>
+            `;
+            document.getElementById('leetcode-stats').innerHTML = statsHTML;
+          } else {
+            document.getElementById('leetcode-stats').innerHTML = "<p>Failed to load stats.</p>";
+          }
+        } catch (error) {
+          console.error(error);
+          document.getElementById('leetcode-stats').innerHTML = "<p>Error loading stats.</p>";
+        }
+      }
+      fetchLeetCodeStats();
+
+      // Fetch and Draw LeetCode Submission Heatmap
+      async function loadLeetCodeHeatmap() {
+        const username = "Amit191978";
+        try {
+          const response = await fetch(`https://leetcode-api-faisalshohag.vercel.app/${username}`);
+          const data = await response.json();
+
+          if (data.submissionCalendar) {
+            const calendarData = {};
+
+            for (const timestamp in data.submissionCalendar) {
+              const date = new Date(timestamp * 1000); // seconds to ms
+              const dateString = date.toISOString().split('T')[0]; // 'YYYY-MM-DD'
+              if (calendarData[dateString]) {
+                calendarData[dateString] += data.submissionCalendar[timestamp];
+              } else {
+                calendarData[dateString] = data.submissionCalendar[timestamp];
+              }
+            }
+
+            const cal = new CalHeatmap();
+            cal.paint({
+              itemSelector: "#heatmap",
+              domain: "month",
+              subDomain: "day",
+              data: {
+                source: Object.entries(calendarData).map(([date, value]) => ({ date, value })),
+                x: "date",
+                y: "value",
+              },
+              range: 6, // Last 6 months
+              legend: [1, 3, 5, 10],
+              tooltip: true,
+              verticalOrientation: true,
+            });
+          } else {
+            document.getElementById('heatmap').innerHTML = "<p>Failed to load submission data.</p>";
+          }
+        } catch (error) {
+          console.error(error);
+          document.getElementById('heatmap').innerHTML = "<p>Error loading heatmap.</p>";
+        }
+      }
+      loadLeetCodeHeatmap();
+      </script>
 
 
     <!-- Fifth Section: Skills -->
