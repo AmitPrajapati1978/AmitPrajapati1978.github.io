@@ -17,6 +17,7 @@
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels"></script>
 
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
   <link rel="stylesheet" href="https://unpkg.com/cal-heatmap@4.0.0-beta.7/cal-heatmap.css" />
   <!-- Cal-Heatmap JS -->
@@ -285,7 +286,7 @@
               <canvas id="leetcode-chart" style="max-width: 400px; margin: auto;"></canvas>
             </div>
     
-            <!-- Text Counts -->
+            <!-- Text Stats -->
             <div class="col s12 m6">
               <div id="leetcode-text-stats" style="font-size: 18px; line-height: 2;"></div>
             </div>
@@ -295,83 +296,81 @@
       </div>
     </section>
     
-    
-    
     <script>
       async function fetchLeetCodeStats() {
-        const username = "Amit191978"; // Your username
+        const username = "Amit191978"; // ✅
         try {
           const response = await fetch(`https://leetcode-api-faisalshohag.vercel.app/${username}`);
           const data = await response.json();
       
           if (data.totalSolved !== undefined) {
-            const easy = data.easySolved;
-            const medium = data.mediumSolved;
-            const hard = data.hardSolved;
+            const easySolved = data.easySolved;
+            const mediumSolved = data.mediumSolved;
+            const hardSolved = data.hardSolved;
       
-            // 🌟 Draw Chart
+            const totalEasy = 873;
+            const totalMedium = 1834;
+            const totalHard = 827;
+      
             const ctx = document.getElementById('leetcode-chart').getContext('2d');
             new Chart(ctx, {
               type: 'doughnut',
               data: {
                 labels: ['Easy', 'Medium', 'Hard'],
-                datasets: [{
-                  label: 'Problems Solved',
-                  data: [easy, medium, hard],
-                  backgroundColor: [
-                    '#00e676', // green
-                    '#ffca28', // yellow
-                    '#ff5252'  // red
-                  ],
-                  borderColor: '#ffffff',
-                  borderWidth: 2
-                }]
+                datasets: [
+                  {
+                    label: 'Solved',
+                    data: [easySolved, mediumSolved, hardSolved],
+                    backgroundColor: [
+                      '#00e676', // Green Easy
+                      '#ffca28', // Yellow Medium
+                      '#ff5252'  // Red Hard
+                    ],
+                    borderWidth: 1
+                  },
+                  {
+                    label: 'Remaining',
+                    data: [
+                      totalEasy - easySolved,
+                      totalMedium - mediumSolved,
+                      totalHard - hardSolved
+                    ],
+                    backgroundColor: [
+                      'rgba(0, 230, 118, 0.2)',
+                      'rgba(255, 202, 40, 0.2)',
+                      'rgba(255, 82, 82, 0.2)'
+                    ],
+                    borderWidth: 1
+                  }
+                ]
               },
               options: {
                 responsive: true,
                 maintainAspectRatio: false,
+                cutout: '60%',
                 plugins: {
                   legend: {
-                    position: 'bottom',
-                    labels: {
-                      color: '#333',
-                      font: {
-                        size: 14
-                      }
-                    }
+                    position: 'bottom'
                   },
                   title: {
                     display: true,
-                    text: `${username}'s LeetCode Problems Solved`,
+                    text: `${username}'s LeetCode Progress`,
                     font: {
                       size: 18
                     }
-                  },
-                  datalabels: {
-                    color: '#000',
-                    font: {
-                      weight: 'bold',
-                      size: 14
-                    },
-                    formatter: (value, ctx) => {
-                      let sum = ctx.chart._metasets[0].total;
-                      let percentage = (value * 100 / sum).toFixed(1) + "%";
-                      return percentage;
-                    }
                   }
                 }
-              },
-              plugins: [ChartDataLabels]
+              }
             });
       
-            // 🌟 Fill Text Stats
+            // Text Stats
             const textStatsHTML = `
               <h5><b>${username}</b>'s Summary</h5>
               <ul style="list-style-type: none; padding-left: 0;">
                 <li><b>Problems Solved:</b> ${data.totalSolved} / 3534</li>
-                <li><b>Easy:</b> ${easy} / 873</li>
-                <li><b>Medium:</b> ${medium} / 1834</li>
-                <li><b>Hard:</b> ${hard} / 827</li>
+                <li><b>Easy:</b> ${easySolved} / 873</li>
+                <li><b>Medium:</b> ${mediumSolved} / 1834</li>
+                <li><b>Hard:</b> ${hardSolved} / 827</li>
                 <li><b>Ranking:</b> ${data.ranking}</li>
                 <li><b>Contribution Points:</b> ${data.contributionPoint}</li>
               </ul>
@@ -391,7 +390,6 @@
       
       fetchLeetCodeStats();
       </script>
-      
       
 
     
